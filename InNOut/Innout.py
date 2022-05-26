@@ -23,6 +23,9 @@ class InnoutAutomation(unittest.TestCase):
     def test_view_menu_button_functionality(self):
         self.driver.find_element(By.ID, 'view-menu').click()
         assert "Menu" in self.driver.find_element(By.ID, 'menu-nav').text
+    
+    def test_gift_card_in_navigation(self):
+        assert "GIFT CARDS" in self.driver.find_element(By.CLASS_NAME, 'nav-sub-content').text
 
     def tearDown(self):
         self.driver.quit()
